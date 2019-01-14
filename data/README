@@ -4,8 +4,10 @@
 This is a dataset of Irish language tweets, labeled by positive (1)
 or negative (0) sentiment. Each row of the training and test CSVs
 corresponds to a single tweet. The first entry in each row is the label.
-The rest of the entries are the indices of the words in the tweet
+The rest of the entries are the indices of the lowercased words in the tweet
 taken from a fixed vocabulary (the 5001 words in ga-sentiment-vocab.txt).
 Note that the final word (index 5000) is a special out-of-vocabulary
 token "<UNK>" which is used for any words not in the remainder of
-the vocabulary.
+the vocabulary. We discarded all punctuation, URLs, etc. Usernames
+all end up mapped to <UNK>, which is why so many tweets start with
+one or more 5000s.
